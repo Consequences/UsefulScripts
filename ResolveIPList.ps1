@@ -1,5 +1,10 @@
-$servers = get-content "C:\Users\wforte\Documents\Virtual Lab\alive.txt"
-$serversAndIps ="C:\Users\wforte\Documents\Virtual Lab\resolved.csv"
+Param(
+  [string]$input,
+  [string]$output
+)
+if($input AND $output){
+$servers = get-content $input
+$serversAndIps = $output
 
 $results = @()
 $count = 0
@@ -7,6 +12,7 @@ $count = 0
 $mes="Starting..."
 Write-Host $mes
 
+## Thanks to Al Feersum in the comments of http://blog.forrestshields.com/post/2012/08/01/Resolving-Reverse-DNS-Lookups-in-PowerShell.aspx
 Function ResolveAddress($IP) {
 
     $IP = [string]$IP
@@ -59,3 +65,6 @@ foreach ($server in $servers)
 
 
 $results | export-csv -NoTypeInformation $serversandips
+}else{
+	Write-Host "Usage: resolveIPList.ps1 -input <text file> -output <csv file>"
+}
