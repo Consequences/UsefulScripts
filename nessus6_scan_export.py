@@ -2,6 +2,9 @@ import requests
 import json
 import sys
 import time
+
+# Forked from https://github.com/averagesecurityguy
+
 """
 import requests
 import logging
