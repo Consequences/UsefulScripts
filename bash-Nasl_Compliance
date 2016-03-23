@@ -1,0 +1,17 @@
+#
+#sudo ./nasl -a -t 192.168.1.100 ../lib/nessus/plugins/database_compliance_check.nbin
+#
+#
+#            Database Compliance Checks, version 1.139
+#
+#Which file contains your security policy [Leave blank to end collection]: /root/CIS_Microsoft_SQL_Server_2008_R2_Database_v1_3_0_Level_1_DB.audit
+#Which file contains your security policy [Leave blank to end collection]:
+#Database type: oracle, sqlserver, mysql, db2, informix, postgresql, [Leave blank to end collection]
+#type : sqlserver
+#login : USER
+#Password : SQL Server login type: WINDOWS (0), SQL (1)
+#type: 1
+#Database instance [Default] :
+#Port : 1433
+#Database type: oracle, sqlserver, mysql, db2, informix, postgresql, [Leave blank to end collection]
+#type :
