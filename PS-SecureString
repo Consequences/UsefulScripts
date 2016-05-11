@@ -20,5 +20,10 @@ mydomain\someuser
 
 P@ssw0rd
 
+##Or
+
+> $credential.GetNetworkCredential().password
+P@ssw0rd
+
 ## https://blogs.technet.microsoft.com/heyscriptingguy/2013/03/26/decrypt-powershell-secure-string-password/
 
