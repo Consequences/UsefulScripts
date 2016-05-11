@@ -1,0 +1,24 @@
+> $string = "lololol"
+
+> $secure = ConvertTo-SecureString $string -asplaintext -force
+
+> [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR( ($secure) ))
+
+lololol
+
+---------------------------------------------
+
+> $credential = Get-Credential
+
+> $credential.UserName
+
+mydomain\someuser
+
+> $PlainTextPassword= [Runtime.InteropServices.Marshal]::PtrToStringAuto([Runtime.InteropServices.Marshal]::SecureStringToBSTR( (ConvertTo-SecureString $credential.Password) ))
+
+> Write-Host $PlainTextPassword
+
+P@ssw0rd
+
+## https://blogs.technet.microsoft.com/heyscriptingguy/2013/03/26/decrypt-powershell-secure-string-password/
+
